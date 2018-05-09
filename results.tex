@@ -1,0 +1,29 @@
+\section{RESULTS}\label{sec:results}
+The case studies presented in \cref{sec:case_studies}, using the method presented in \cref{sec:method}, were implemented on the Amigo robot.
+Due to the system architecture already in place, the case studies could only be partly implemented.
+It was thought that the existing SMACH finite-state machines of the robot system architecture, would provide an easy platform on which to integrate the supervisor.
+However, the synchronous nature of these finite-state machines and their complexity, made it difficult to integrate them with the asynchronous callback structure of the supervisor.
+An example of this is the grab skill SMACH finite-state machine in the Amigo repository.
+The state machine navigates the robot in front of the specified object, updates the world model, opens and closes the grabber and more.
+During the execution of this state machine the supervisor cannot call other events, but without all these steps the object will not be grabbed correctly.
+These are just limitations on the robot side, however, and not limitations to the applicability and benefits of supervisory control synthesis to autonomous robot.
+Furthermore, future research can solve these issues by, for example, making the callbacks multi-threaded.\\
+
+Because of these limitations case study II could not be implemented on the robot, because the current architecture only allows planning of one arm at the same time.
+Case study I was implemented for the most part.
+
+More information on what is implemented and what is not, is provided in this paper's repository~\cite{jorrit_github}.
+This implementation confirmed the following benefits the method in this paper discusses:\\
+
+\begin{LaTeXdescription}
+	\item [Concurrency] In case study I the robot moves one of the arms and navigates to a table at the same time.
+	\item [Modularity and Re-usability] Both case studies combine a robot model, safety requirements, skill requirements and a task requirement from which a supervisor is synthesized. When the task requirement describing case study I is replaced with the task requirement describing case study II, synthesis provides a supervisor that executes this new task.\\
+\end{LaTeXdescription}
+
+And to a lesser extent:
+\begin{LaTeXdescription}
+	\item [Separation] Because the safety requirements were the same for both case studies, the effect of changing a requirement was not shown. Because of the modular design, however, this property should still hold.\\
+\end{LaTeXdescription}
+
+
+

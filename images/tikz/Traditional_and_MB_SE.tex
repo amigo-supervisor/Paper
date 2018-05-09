@@ -1,0 +1,87 @@
+\documentclass{standalone}
+\usepackage{wonhamautomata}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fmbepics}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.document}
+\usetikzlibrary{shapes}
+
+\tikzstyle{every picture}=[x=1em,y=1em,>=stealth,semithick]
+
+\tikzstyle{document}=[shape=document % Warning shape and style overload
+,minimum size=2em,draw,anchor=center,font=\smaller]
+\tikzstyle{model}=[circle,minimum size=2em,draw,anchor=center]
+\tikzstyle{realization}=[rectangle,minimum size=2em,draw,anchor=center]
+
+\tikzstyle{actlb}=[above,inner sep=0pt,font=\relsize{-2}\strut]
+\tikzstyle{actlb'}=[actlb,anchor=mid,fill=back]
+\definecolor{tueblue}{rgb}{0.000,0.400,0.800}
+\tikzstyle{act}=[->,shorten >=1pt,rounded corners]
+\tikzstyle{iter}=[act,tueblue]
+\tikzstyle{evalnode}=[draw,ellipse,tueblue,sloped,rotate=90]
+\tikzstyle{evalconn}=[act,tueblue,below,font=\relsize{-1}]
+
+
+\begin{document}
+% \begin{figure}[htb]
+\smaller
+% \begin{center}
+% \centering
+  \begin{tikzpicture}[fmbe]
+    \node[document]                  (R)   {$R$};
+    \node[document,right of=R]       (D)   {$D$};
+
+    \node[document,above right of=D] (R1)  {$R_\mathrm{S}$};
+    \node[document,right of=R1]      (D1)  {$D_\mathrm{S}$};
+    \node[model,right of=D1]         (M1)  {$S$};
+    \node[realization,right of=M1]   (Z1)  {$S$};
+
+    \node[document,below right of=D] (R2)  {$R_\mathrm{P}$};
+    \node[document,right of=R2]      (D2)  {$D_\mathrm{P}$};
+    \node[model,right of=D2]         (M2)  {$P$};
+    \node[realization,right of=M2]   (Z2)  {$P$};
+
+    \node[infra,minimum height=10em] (I) at (intersection of M1--Z2 and M2--Z1)
+    {Interface $I$\hspace*{2pt}};
+
+    \draw[act] (D.20)  -- +(0:1em) |- node[actlb',pos=.25] {define} (R1);
+    \draw[act] (D.-20) -- +(0:1em) |- node[actlb',pos=.25] {define} (R2);
+    \path[act]
+    ([xshift=-4em]R.center) edge node[pos=.45]  {define}  (R)
+    (R)   edge node  {design}   (D)
+    (R1)  edge node  {design} (D1)
+    (R2)  edge node  {design}   (D2)
+    (D1)  edge node  {model}    (M1)
+    (D2)  edge node  {model}    (M2)
+    (M1)  edge node  {realize}  (Z1)
+    (M2)  edge node  {realize}  (Z2)
+    (D)   edge[dashed,shorten >=1ex]  (I)
+    ;
+
+    \path[act]
+    (M1)  edge node[actlb',pos=.4]  {integrate}  (M1 |- I.north)
+    (M2)  edge node[actlb',pos=.4]  {integrate}  (M2 |- I.south)
+    (Z1)  edge node[actlb',pos=.4]  {integrate}  (Z1 |- I.north)
+    (Z2)  edge node[actlb',pos=.4]  {integrate}  (Z2 |- I.south)
+    ;
+
+    \draw[act] (D1.north) -- (17.6,6.8) -- (30.6,6.8) -- (Z1.north);
+    \draw (24.1,7.5) node {realize};
+
+    \draw[act] (D2.south) -- (17.6,-6.8) -- (30.6,-6.8) -- (Z2.south);
+    \draw (24.1,-7.5) node {realize};
+  \end{tikzpicture}
+
+
+
+% \end{center}
+  % \caption{Traditional and model-based systems engineering processes}
+  % \label{fig:TR_and_MB_SE_processes}
+% \end{figure}
+\end{document} 

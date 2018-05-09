@@ -1,0 +1,38 @@
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[node distance = 4cm, auto, every node/.style={scale=0.8}]
+    % Place nodes
+    \node [block] (init) {Go to table and wait};
+    \node [cloud, left of=init] (user) {User};
+
+    \node [decision, below of=init, yshift=1cm] (eval_arm_choice) {What arm is closer?};
+
+    \node [decision, below left of=eval_arm_choice] (eval_arm_avail_l) {Supervisor is the arm free to use?};
+    \node [decision, below of=eval_arm_avail_l] (eval_arm_safe_l) {Supervisor is the arm safe to move?};
+    \node [decision, below right of=eval_arm_choice] (eval_arm_avail_r) {Supervisor is the arm free to use?};
+    \node [decision, below of=eval_arm_avail_r] (eval_arm_safe_r) {Supervisor is the arm safe to move?};
+
+    \node [block, below of=eval_arm_safe_l, yshift=1cm] (grab_to_l) {Grab object with left arm};
+    \node [block, below of=eval_arm_safe_r, yshift=1cm] (grab_to_r) {Grab object with right arm};
+
+    % Draw edges
+    \path [line, dashed] (user) -- (init);
+    \path [line] (init) -- (eval_arm_choice);
+
+    \path [line, anchor=south] (eval_arm_choice)  -| node[decision answer] {left} (eval_arm_avail_l);
+    \path [line, anchor=south] (eval_arm_choice) -| node[decision answer, right] {right} (eval_arm_avail_r);
+
+    \path [line, anchor=south] (eval_arm_avail_l)  -- node[decision answer] {yes} (eval_arm_safe_l);
+    \path[->] (eval_arm_avail_l) edge [loop left, looseness=4] node {no} (eval_arm_avail_l);
+    \path [line, anchor=south] (eval_arm_avail_r) -- node[decision answer] {yes} (eval_arm_safe_r);
+    \path[->] (eval_arm_avail_r) edge [loop right, looseness=4] node {no} (eval_arm_avail_r);
+
+    \path [line, anchor=south] (eval_arm_safe_l)  -- node[decision answer] {yes} (grab_to_l);
+    \path[->] (eval_arm_safe_l) edge [loop left, looseness=4] node {no} (eval_arm_safe_l);
+    \path [line, anchor=south] (eval_arm_safe_r) -- node[decision answer] {yes} (grab_to_r);
+    \path[->] (eval_arm_safe_r) edge [loop right, looseness=4] node {no} (eval_arm_safe_r);
+
+
+  \end{tikzpicture}
+  \caption{Decision flowchart of Case Study II}\label{fig:decision_flowchart_CSII}
+\end{figure}

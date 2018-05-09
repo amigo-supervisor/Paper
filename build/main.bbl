@@ -1,0 +1,757 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{sup_navigation}{article}{}
+      \name{author}{5}{}{%
+        {{hash=4d8ebb55bb86d892b68d7d1311ccebc5}{%
+           family={Gonzalez},
+           familyi={G\bibinitperiod},
+           given={A.\bibnamedelimi G.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8bcb4a70092a3441ed85af737b1fbaf3}{%
+           family={Alves},
+           familyi={A\bibinitperiod},
+           given={M.\bibnamedelimi V.\bibnamedelimi S.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=90642121cbaecbd41df5cea23824fa65}{%
+           family={Viana},
+           familyi={V\bibinitperiod},
+           given={G.\bibnamedelimi S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=79bb5b270bba95e4452549d59cdb7134}{%
+           family={Carvalho},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi K.},
+           giveni={L\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=2d52afac37ee950147ebb9fc0a23662d}{%
+           family={Basilio},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f9c1138685422441a157de2ef2bc6d32}
+      \strng{fullhash}{8373650266cbf43e1373b090274f0cfe}
+      \strng{bibnamehash}{8373650266cbf43e1373b090274f0cfe}
+      \strng{authorbibnamehash}{8373650266cbf43e1373b090274f0cfe}
+      \strng{authornamehash}{f9c1138685422441a157de2ef2bc6d32}
+      \strng{authorfullhash}{8373650266cbf43e1373b090274f0cfe}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1551-3203}
+      \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+      \field{number}{99}
+      \field{title}{Supervisory Control-Based Navigation Architecture: A New Framework for Autonomous Robots in Industry 4.0 Environments}
+      \field{volume}{PP}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/TII.2017.2788079
+      \endverb
+      \keyw{Automata;Computer architecture;Mobile robots;Navigation;Service robots;Supervisory control;Discrete Event Systems;Industry 4.0;Mobile Robots;Supervisory Control}
+    \endentry
+    \entry{original}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b4cc7ac19b81cf44027bead0c89dcb0d}{%
+           family={Ramadge},
+           familyi={R\bibinitperiod},
+           given={P.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6bb8f0987159faa0116e6233b587798e}{%
+           family={Wonham},
+           familyi={W\bibinitperiod},
+           given={W.\bibnamedelimi M.},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4906f6b759a69c59c6724eaa55e81e2}
+      \strng{fullhash}{d4906f6b759a69c59c6724eaa55e81e2}
+      \strng{bibnamehash}{d4906f6b759a69c59c6724eaa55e81e2}
+      \strng{authorbibnamehash}{d4906f6b759a69c59c6724eaa55e81e2}
+      \strng{authornamehash}{d4906f6b759a69c59c6724eaa55e81e2}
+      \strng{authorfullhash}{d4906f6b759a69c59c6724eaa55e81e2}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Journal of Control and Optimization}
+      \field{number}{1}
+      \field{title}{Supervisory Control of a Class of Discrete Event Processes}
+      \field{volume}{25}
+      \field{year}{1987}
+      \field{pages}{206\bibrangedash 230}
+      \range{pages}{25}
+    \endentry
+    \entry{themepark}{article}{}
+      \name{author}{4}{}{%
+        {{hash=cad6cd3e91d65488a75de5cd644e61ba}{%
+           family={Forschelen},
+           familyi={F\bibinitperiod},
+           given={Stefan\bibnamedelimb T.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=f37d2bc14e9ad1082ea25a6018a1f519}{%
+           family={Mortel-Fronczak},
+           familyi={M\bibinithyphendelim F\bibinitperiod},
+           given={Joanna\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=f13c91bd3ea4ed351b950d71b0204820}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Rong},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7db0fc9258c552361e9403939313497e}{%
+           family={Rooda},
+           familyi={R\bibinitperiod},
+           given={Jacobus\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{49d7d20e4bdb0506bfc4a267d2fbbb4f}
+      \strng{fullhash}{5ce8c3541e8bc771b1cd0a7bf1cb3d59}
+      \strng{bibnamehash}{5ce8c3541e8bc771b1cd0a7bf1cb3d59}
+      \strng{authorbibnamehash}{5ce8c3541e8bc771b1cd0a7bf1cb3d59}
+      \strng{authornamehash}{49d7d20e4bdb0506bfc4a267d2fbbb4f}
+      \strng{authorfullhash}{5ce8c3541e8bc771b1cd0a7bf1cb3d59}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Discrete Event Dyn Syst}
+      \field{title}{Application of supervisory control theory to theme park vehicles}
+      \field{year}{2012}
+    \endentry
+    \entry{Baeten2016}{inbook}{}
+      \name{author}{3}{}{%
+        {{hash=9485af70fb5dfb1516e4a66a5604d9c1}{%
+           family={Baeten},
+           familyi={B\bibinitperiod},
+           given={Jos\bibnamedelimb C.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f37d2bc14e9ad1082ea25a6018a1f519}{%
+           family={Mortel-Fronczak},
+           familyi={M\bibinithyphendelim F\bibinitperiod},
+           given={Joanna\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=7db0fc9258c552361e9403939313497e}{%
+           family={Rooda},
+           familyi={R\bibinitperiod},
+           given={Jacobus\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=1108d7b0eabf470d15294ac63dbc271b}{%
+           family={Dimirovski},
+           familyi={D\bibinitperiod},
+           given={Georgi\bibnamedelima M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{3a628dfd7cccc9e17cdac2c00f18408a}
+      \strng{fullhash}{3a628dfd7cccc9e17cdac2c00f18408a}
+      \strng{bibnamehash}{3a628dfd7cccc9e17cdac2c00f18408a}
+      \strng{authorbibnamehash}{3a628dfd7cccc9e17cdac2c00f18408a}
+      \strng{authornamehash}{3a628dfd7cccc9e17cdac2c00f18408a}
+      \strng{authorfullhash}{3a628dfd7cccc9e17cdac2c00f18408a}
+      \strng{editorbibnamehash}{1108d7b0eabf470d15294ac63dbc271b}
+      \strng{editornamehash}{1108d7b0eabf470d15294ac63dbc271b}
+      \strng{editorfullhash}{1108d7b0eabf470d15294ac63dbc271b}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Complex Systems: Relationships between Control, Communications and Computing}
+      \field{title}{Integration of Supervisory Control Synthesis in Model-Based Systems Engineering}
+      \field{year}{2016}
+      \field{pages}{39\bibrangedash 58}
+      \range{pages}{20}
+    \endentry
+    \entry{mbse}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=dd27918d5f42a09251ed9813c70724c1}{%
+           family={Estefan},
+           familyi={E\bibinitperiod},
+           given={Jeff\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1521b7e6f32d1e974b7c4b1a0838d34}
+      \strng{fullhash}{b1521b7e6f32d1e974b7c4b1a0838d34}
+      \strng{bibnamehash}{b1521b7e6f32d1e974b7c4b1a0838d34}
+      \strng{authorbibnamehash}{b1521b7e6f32d1e974b7c4b1a0838d34}
+      \strng{authornamehash}{b1521b7e6f32d1e974b7c4b1a0838d34}
+      \strng{authorfullhash}{b1521b7e6f32d1e974b7c4b1a0838d34}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Incose MBSE Focus Group}
+      \field{number}{8}
+      \field{title}{Survey of model-based systems engineering (MBSE) methodologies}
+      \field{volume}{25}
+      \field{year}{2007}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{sup_swarm}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=94cd6fd118bd9e6b34ae5b4ed36cfbc5}{%
+           family={Furci},
+           familyi={F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=94178df85c11619a1906e6504acb639f}{%
+           family={Paoli},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6eded9ed608db3e092ac377681c39981}{%
+           family={Naldi},
+           familyi={N\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f5ee3151d85417c880a3350ca34c2b3}
+      \strng{fullhash}{5f5ee3151d85417c880a3350ca34c2b3}
+      \strng{bibnamehash}{5f5ee3151d85417c880a3350ca34c2b3}
+      \strng{authorbibnamehash}{5f5ee3151d85417c880a3350ca34c2b3}
+      \strng{authornamehash}{5f5ee3151d85417c880a3350ca34c2b3}
+      \strng{authorfullhash}{5f5ee3151d85417c880a3350ca34c2b3}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2013 IEEE 18th Conference on Emerging Technologies Factory Automation (ETFA)}
+      \field{issn}{1946-0740}
+      \field{month}{9}
+      \field{title}{A supervisory control strategy for robot-assisted search and rescue in hostile environments}
+      \field{year}{2013}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ETFA.2013.6648162
+      \endverb
+      \keyw{discrete event systems;mobile robots;multi-robot systems;robot dynamics;robot kinematics;service robots;DES;UAV;aerial robots;agent dynamic;agent kinematic;autonomous cooperation;autonomous navigation;discrete event systems;dynamic environments;ground robots;heterogeneous robot team;high-level control;hostile environments;low-level control;online evaluation;optimization;reactive supervisory control;robot-assisted search-and-rescue;supervisory control strategy;unstructured environment;Automata;Computer architecture;Level control;Optimization;Trajectory;Vehicle dynamics}
+    \endentry
+    \entry{sup_human}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=574e95d114a9926a694bb0df46c80726}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=d9f15ff0102b5cebc7caafec1a4c7e07}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Yinhao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b102f43453b30e3c70ecf058c253366a}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{822cdb4297f73f309e124d91bf5a3c07}
+      \strng{fullhash}{822cdb4297f73f309e124d91bf5a3c07}
+      \strng{bibnamehash}{822cdb4297f73f309e124d91bf5a3c07}
+      \strng{authorbibnamehash}{822cdb4297f73f309e124d91bf5a3c07}
+      \strng{authornamehash}{822cdb4297f73f309e124d91bf5a3c07}
+      \strng{authorfullhash}{822cdb4297f73f309e124d91bf5a3c07}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 American Control Conference (ACC)}
+      \field{month}{7}
+      \field{title}{Performance guaranteed human-robot collaboration through correct-by-design}
+      \field{year}{2016}
+      \field{pages}{6183\bibrangedash 6188}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ACC.2016.7526641
+      \endverb
+      \keyw{Markov processes;human-robot interaction;learning (artificial intelligence);AI;PCTL;POMDP;artificial intelligence;automated human-robot collaboration;autonomous driving;autonomous robotics;correct-by-design;formal design theory;global collaboration task;human society;intelligent service robots;learning algorithm;manufacturing system;partially observable Markov decision processes;probabilistic computation tree logic;robot controller;supervisory control framework;task completion;Collaboration;Computational modeling;Robot kinematics;Robot sensing systems;Uncertainty}
+    \endentry
+    \entry{modular}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=1ad6d510148b26ba4930f630f8cd163a}{%
+           family={Queiroz},
+           familyi={Q\bibinitperiod},
+           given={M.\bibnamedelimi H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=0acef24a3e5a5b108a96c84427a8fac8}{%
+           family={Cury},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi E.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{753812ca6cc2c4183a33b131ff6f071d}
+      \strng{fullhash}{753812ca6cc2c4183a33b131ff6f071d}
+      \strng{bibnamehash}{753812ca6cc2c4183a33b131ff6f071d}
+      \strng{authorbibnamehash}{753812ca6cc2c4183a33b131ff6f071d}
+      \strng{authornamehash}{753812ca6cc2c4183a33b131ff6f071d}
+      \strng{authorfullhash}{753812ca6cc2c4183a33b131ff6f071d}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2000 American Control Conference. ACC (IEEE Cat. No.00CH36334)}
+      \field{issn}{0743-1619}
+      \field{title}{Modular control of composed systems}
+      \field{volume}{6}
+      \field{year}{2000}
+      \field{pages}{4051\bibrangedash 4055 vol.6}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/ACC.2000.876983
+      \endverb
+      \keyw{computational complexity;controllability;discrete event systems;composed systems;computational complexity;control module;controllability;discrete event systems;modular control;modularity;supervisory control;Control system synthesis;Control systems;Discrete event systems;Distributed control;Large-scale systems;Manufacturing systems;Open loop systems;Polynomials;Power system modeling;Supervisory control}
+    \endentry
+    \entry{hierachical}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0307349bcc362999b8324686bdf9bfa5}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={K.\bibnamedelimi C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=6bb8f0987159faa0116e6233b587798e}{%
+           family={Wonham},
+           familyi={W\bibinitperiod},
+           given={W.\bibnamedelimi M.},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{739947e5c338ee13bf510072f1784e55}
+      \strng{fullhash}{739947e5c338ee13bf510072f1784e55}
+      \strng{bibnamehash}{739947e5c338ee13bf510072f1784e55}
+      \strng{authorbibnamehash}{739947e5c338ee13bf510072f1784e55}
+      \strng{authornamehash}{739947e5c338ee13bf510072f1784e55}
+      \strng{authorfullhash}{739947e5c338ee13bf510072f1784e55}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An abstract hierarchical control theory is developed for discrete-event systems, based on the concepts of control structures and observers. Control structure is an abstract generalization of the family of controllable sublanguages in the Ramadge-Wonham framework. We establish a general version of Zhong's hierarchical consistency by first achieving control consistency --- preservation of control structures through the aggregation mapping in a two-level hierarchy. For a refinement of hierarchical consistency with preservation of nonblocking, the concept of observer is introduced via congruences on nondeterministic transition structures.}
+      \field{issn}{1573-7594}
+      \field{journaltitle}{Discrete Event Dynamic Systems}
+      \field{month}{7}
+      \field{number}{3}
+      \field{title}{Hierarchical control of discrete-event systems}
+      \field{volume}{6}
+      \field{year}{1996}
+      \field{pages}{241\bibrangedash 273}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1007/BF01797154
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF01797154
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF01797154
+      \endverb
+    \endentry
+    \entry{amigo_rop}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Amigo robot description on ROS website}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://wiki.ros.org/Robots/AMIGO
+      \endverb
+      \verb{url}
+      \verb http://wiki.ros.org/Robots/AMIGO
+      \endverb
+    \endentry
+    \entry{amigo_ros}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Amigo robot description on Robotic Open Platform website}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://roboticopenplatform.org/wiki/AMIGO
+      \endverb
+      \verb{url}
+      \verb http://roboticopenplatform.org/wiki/AMIGO
+      \endverb
+    \endentry
+    \entry{amigo_paper}{article}{}
+      \name{author}{7}{}{%
+        {{hash=9b3b257638ce8d73469c96312da60936}{%
+           family={Lunenburg},
+           familyi={L\bibinitperiod},
+           given={J.J.M.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e3fcf8ea29f18cb09c5a7f9cba38a896}{%
+           family={Clephas},
+           familyi={C\bibinitperiod},
+           given={T.T.G.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b9abd190c062631a6a2cecff80189ee3}{%
+           family={Dirkx},
+           familyi={D\bibinitperiod},
+           given={N.J.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=6a068fa6e9e8ae0cfada4761dff7e405}{%
+           family={Willems},
+           familyi={W\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=ed8082971ce687647011460f365ac8eb}{%
+           family={Elfring},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=58cd1e6c50fa1f2505ad41d29a9ec474}{%
+           family={Sandee},
+           familyi={S\bibinitperiod},
+           given={J.H.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=282d32e4ca855d8166a7db0b50a2b1c3}{%
+           family={Molengraft},
+           familyi={M\bibinitperiod},
+           given={M.J.G.},
+           giveni={M\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{d27dc0de4db0d2d4678d499206c1ec20}
+      \strng{fullhash}{b0a1d801c5997069f7d4ffe30f35f30b}
+      \strng{bibnamehash}{b0a1d801c5997069f7d4ffe30f35f30b}
+      \strng{authorbibnamehash}{b0a1d801c5997069f7d4ffe30f35f30b}
+      \strng{authornamehash}{d27dc0de4db0d2d4678d499206c1ec20}
+      \strng{authorfullhash}{b0a1d801c5997069f7d4ffe30f35f30b}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tech United Eindhoven Team Description 2011}
+      \field{year}{2011}
+    \endentry
+    \entry{amigo_github}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ef7afd7cc27b9fbbae575b39e761e012}{%
+           family={TU/e},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef7afd7cc27b9fbbae575b39e761e012}
+      \strng{fullhash}{ef7afd7cc27b9fbbae575b39e761e012}
+      \strng{bibnamehash}{ef7afd7cc27b9fbbae575b39e761e012}
+      \strng{authorbibnamehash}{ef7afd7cc27b9fbbae575b39e761e012}
+      \strng{authornamehash}{ef7afd7cc27b9fbbae575b39e761e012}
+      \strng{authorfullhash}{ef7afd7cc27b9fbbae575b39e761e012}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{GitHub repository TU/e Robotics}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://github.com/tue-robotics
+      \endverb
+      \verb{url}
+      \verb https://github.com/tue-robotics
+      \endverb
+    \endentry
+    \entry{smach}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{SMACH wiki on ROS.org}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://wiki.ros.org/smach
+      \endverb
+      \verb{url}
+      \verb http://wiki.ros.org/smach
+      \endverb
+    \endentry
+    \entry{cif3}{article}{}
+      \name{author}{9}{}{%
+        {{hash=32d5f5d900aae368adb8648155243d8b}{%
+           family={Beek},
+           familyi={B\bibinitperiod},
+           given={D.A.},
+           giveni={D\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=e5360e519da64995efbb90dab769ee89}{%
+           family={Fokkink},
+           familyi={F\bibinitperiod},
+           given={W.J.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=7e280da001c2d9c2732e3a28e4992614}{%
+           family={Hendriks},
+           familyi={H\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a6cadd7277a7b178ebf83040419d84e4}{%
+           family={Hofkamp},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=54b5373c8f46e959cef26035ac4145ca}{%
+           family={Markovski},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=872910db14ff80a0d772291117cb97b6}{%
+           family={Mortel-Fronczak},
+           familyi={M\bibinithyphendelim F\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=453c31d7e31fa22863c36ef1ba5f3e6b}{%
+           family={Reniers},
+           familyi={R\bibinitperiod},
+           given={M.A.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5debecd88ef8a766db509a94b73c9c95}{%
+           family={Abraham},
+           familyi={A\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c7f03707803345427a9bea721ad956f1}{%
+           family={Havelund},
+           familyi={H\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7e8775e5aa685fd795ce4b8f1befa0c}
+      \strng{fullhash}{c5ecb045c278a29cc2998ecfac61c9f4}
+      \strng{bibnamehash}{c5ecb045c278a29cc2998ecfac61c9f4}
+      \strng{authorbibnamehash}{c5ecb045c278a29cc2998ecfac61c9f4}
+      \strng{authornamehash}{b7e8775e5aa685fd795ce4b8f1befa0c}
+      \strng{authorfullhash}{c5ecb045c278a29cc2998ecfac61c9f4}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{TACAS}
+      \field{title}{CIF 3: Model-Based Engineering of Supervisory Controller}
+      \field{year}{2014}
+    \endentry
+    \entry{cif3_manual}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{CIF 3 language tutorial}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://cif.se.wtb.tue.nl/lang/tut/index.html
+      \endverb
+      \verb{url}
+      \verb http://cif.se.wtb.tue.nl/lang/tut/index.html
+      \endverb
+    \endentry
+    \entry{jorrit_github}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c0f8c46a99b695299a80604a5ccf0417}{%
+           family={Smit},
+           familyi={S\bibinitperiod},
+           given={Jorrit},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0f8c46a99b695299a80604a5ccf0417}
+      \strng{fullhash}{c0f8c46a99b695299a80604a5ccf0417}
+      \strng{bibnamehash}{c0f8c46a99b695299a80604a5ccf0417}
+      \strng{authorbibnamehash}{c0f8c46a99b695299a80604a5ccf0417}
+      \strng{authornamehash}{c0f8c46a99b695299a80604a5ccf0417}
+      \strng{authorfullhash}{c0f8c46a99b695299a80604a5ccf0417}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{GitHub repository of this paper}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://github.com/amigo-supervisor
+      \endverb
+      \verb{url}
+      \verb https://github.com/amigo-supervisor
+      \endverb
+    \endentry
+    \entry{CIF_algo}{article}{}
+      \name{author}{4}{}{%
+        {{hash=fe6f3d67f92d5225f4dc0c62b9f83480}{%
+           family={Ouedraogo},
+           familyi={O\bibinitperiod},
+           given={Lucien},
+           giveni={L\bibinitperiod}}}%
+        {{hash=74f89cb227b97b59399c9c0f674beac9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ratnesh},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f9241563b40e138cc2d46046545103d9}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Robi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=277af6833a995bd6b152363dfd00ca30}{%
+           family={\r{A}kesson},
+           familyi={\r{A}\bibinitperiod},
+           given={Knut},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{441c984521af2a7a9ca5b449f80ecc06}
+      \strng{fullhash}{c1345c266929544405451763579419dc}
+      \strng{bibnamehash}{c1345c266929544405451763579419dc}
+      \strng{authorbibnamehash}{c1345c266929544405451763579419dc}
+      \strng{authornamehash}{441c984521af2a7a9ca5b449f80ecc06}
+      \strng{authorfullhash}{c1345c266929544405451763579419dc}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Automation Science and Engineering}
+      \field{title}{Nonblocking and Safe Control of Discrete-Event Systems Modeled as Extended Finite Automata}
+      \field{volume}{8}
+      \field{year}{2011}
+      \field{pages}{560\bibrangedash 569}
+      \range{pages}{10}
+    \endentry
+    \entry{cif3_c99}{online}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{CIF 3 C99 conversion manual}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://cif.se.wtb.tue.nl/tools/codegen/c99.html
+      \endverb
+      \verb{url}
+      \verb http://cif.se.wtb.tue.nl/tools/codegen/c99.html
+      \endverb
+    \endentry
+    \entry{online_partially_observed}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1397f444896d462651330e963bc59318}{%
+           family={Prosser},
+           familyi={P\bibinitperiod},
+           given={Joseph\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=a94b6b1d92543c88cb9f13361e411c97}{%
+           family={Kam},
+           familyi={K\bibinitperiod},
+           given={Moshe},
+           giveni={M\bibinitperiod}}}%
+        {{hash=95165f4eedc3f9e28b7539f432e985b3}{%
+           family={Kwatny},
+           familyi={K\bibinitperiod},
+           given={Harry\bibnamedelima G.},
+           giveni={H\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e94d4fa4dd5867e8218680b1d2a5e01}
+      \strng{fullhash}{2e94d4fa4dd5867e8218680b1d2a5e01}
+      \strng{bibnamehash}{2e94d4fa4dd5867e8218680b1d2a5e01}
+      \strng{authorbibnamehash}{2e94d4fa4dd5867e8218680b1d2a5e01}
+      \strng{authornamehash}{2e94d4fa4dd5867e8218680b1d2a5e01}
+      \strng{authorfullhash}{2e94d4fa4dd5867e8218680b1d2a5e01}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on automatic control}
+      \field{title}{Online Supervisor Synthesis for Partially Observed Discrete-Event Systems}
+      \field{volume}{43}
+      \field{year}{1988}
+    \endentry
+    \entry{online_near_optimal}{article}{}
+      \name{author}{2}{}{%
+        {{hash=438aeb8b110af8285c7ad9d47cdb4f5e}{%
+           family={Grigorov},
+           familyi={G\bibinitperiod},
+           given={Lenko},
+           giveni={L\bibinitperiod}}}%
+        {{hash=bb4286ea828d22d1222486e3a26b018c}{%
+           family={Rudie},
+           familyi={R\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{e54b386397bf28229a0b65d38b4b3d9c}
+      \strng{fullhash}{e54b386397bf28229a0b65d38b4b3d9c}
+      \strng{bibnamehash}{e54b386397bf28229a0b65d38b4b3d9c}
+      \strng{authorbibnamehash}{e54b386397bf28229a0b65d38b4b3d9c}
+      \strng{authornamehash}{e54b386397bf28229a0b65d38b4b3d9c}
+      \strng{authorfullhash}{e54b386397bf28229a0b65d38b4b3d9c}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Discrete Event Dynamic Systems}
+      \field{title}{Near-Optimal Online Control of Dynamic Discrete-Event Systems}
+      \field{volume}{16}
+      \field{year}{2006}
+    \endentry
+    \entry{online_sup_rep_obs_sub}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5d0cec1268578ed6a75439ef5d3fa2a9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Renyuan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e02f7104265c7bf7deadc4c26502e24b}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d04d10de86900e70e78817cabce602a5}
+      \strng{fullhash}{d04d10de86900e70e78817cabce602a5}
+      \strng{bibnamehash}{d04d10de86900e70e78817cabce602a5}
+      \strng{authorbibnamehash}{d04d10de86900e70e78817cabce602a5}
+      \strng{authornamehash}{d04d10de86900e70e78817cabce602a5}
+      \strng{authorfullhash}{d04d10de86900e70e78817cabce602a5}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chinese Control Conference}
+      \field{title}{Online Computation of Supremal Relatively Observable Sublanguage of Discrete-Event Systems}
+      \field{volume}{34}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

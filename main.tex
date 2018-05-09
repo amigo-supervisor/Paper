@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+% \makeatletter
+% \def\include@path{{./include/}}
+% \makeatother
+
+% \documentclass[A4, 10 pt, conference]{./include/ieeeconf/ieeeconf}  % Comment this line out if you need a4paper
+
+\documentclass[a4paper, 10pt, conference]{IEEEtran}      % Use this line for a4 paper
+% \documentclass[a4paper, 11pt]{report}      % Use this line for a4 paper
+
+
+% \IEEEoverridecommandlockouts%                              % This command is only needed if
+                                                           % you want to use the \thanks command
+
+% \overrideIEEEmargins%                                      % Needed to meet printer requirements.
+
+\makeatletter
+\def\input@path{{./images/}{./include/}}
+\makeatother
+% \usepackage{adjustbox}
+% \renewcommand{\IEEEtitletopspaceextra}{20pt}
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\usepackage{enumerate}
+\usepackage{courier}
+% \usepackage{enumitem} 
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{bm}
+\usepackage{listings}
+% \usepackage{caption}
+% \renewcommand{\lstlistingname}{Code}
+\usepackage{tikz,ifthen,xstring,calc,pgfkeys,pgfopts}
+% \usepackage{tikz-uml}
+\usepackage{standalone}
+
+
+\usepackage{wonhamautomata}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fmbepics}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.document}
+\usetikzlibrary{shapes}
+
+\tikzstyle{every picture}=[x=1em,y=1em,>=stealth,semithick]
+
+\tikzstyle{document}=[shape=document % Warning shape and style overload
+,minimum size=2em,draw,anchor=center,font=\smaller]
+\tikzstyle{model}=[circle,minimum size=2em,draw,anchor=center]
+\tikzstyle{realization}=[rectangle,minimum size=2em,draw,anchor=center]
+
+\tikzstyle{actlb}=[above,inner sep=0pt,font=\relsize{-2}\strut]
+\tikzstyle{actlb'}=[actlb,anchor=mid,fill=back]
+\definecolor{tueblue}{rgb}{0.000,0.400,0.800}
+\tikzstyle{act}=[->,shorten >=1pt,rounded corners]
+\tikzstyle{iter}=[act,tueblue]
+\tikzstyle{evalnode}=[draw,ellipse,tueblue,sloped,rotate=90]
+\tikzstyle{evalconn}=[act,tueblue,below,font=\relsize{-1}]
+
+
+
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+% \usetikzlibrary{fmbepics}
+\usetikzlibrary{automata}
+
+\tikzset{
+    statesquaresup/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           minimum height=2em,
+           inner sep=2pt,
+           text centered,
+           fill=green!40
+           },
+}
+
+\tikzset{
+    statesquareimpl/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           minimum height=2em,
+           inner sep=2pt,
+           text centered,
+           fill=blue!20
+           },
+}
+
+\tikzset{
+    statesquarereq/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           minimum height=2em,
+           inner sep=2pt,
+           text centered,
+           fill=red!40
+           },
+}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=orange!40, 
+    text width=4.5em, text badly centered, inner sep=0pt, aspect=1.5, yshift=1cm]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{decision answer}=[midway,left,color=black]
+    
+% \usepackage{wonhamautomata}
+\usepackage{color}
+\definecolor{tueblue}{rgb}{0.000,0.400,0.800}
+
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline,fancyline}{}
+
+\usepackage{url}
+\usepackage[backend=biber, style=ieee,  sorting=none]{biblatex}
+\addbibresource{ref.bib}
+\usepackage[capitalise]{cleveref}
+
+%\newcommand{\todo}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\spred}[1]{\textbf{#1}~$\downarrow$}
+\newcommand{\epred}[1]{$\rightarrow$ \{ \textit{#1} \}}
+\newcommand{\nepred}[1]{$\nrightarrow$~\{~\textit{#1}~\}}
+
+\newcommand{\logand}{$\wedge$}
+\newcommand{\logor}{$\vee$}
+\newcommand{\logimplies}{$\Rightarrow$}
+\newcommand{\lognot}{$\neg$}
+
+\lstdefinelanguage{CIF}
+{morekeywords={*,plant, def, location, marked, initial, edge, controllable, disc, bool, end, :},
+sensitive=false,
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/},
+morestring=[b]",
+}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{green},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  % morekeywords={*,plant, def, location, marked, initial, edge, controllable, disc, bool},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here)) 
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{muave},     % string literal style
+  tabsize=2,                     % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % linewidth=0.6\columnwidth
+}
+
+
+\title{\LARGE \bf 
+Supervisory Control Synthesis for Autonomous Robots\\
+\large A Study Using an Autonomous Service Robot}
+
+\author{J. Smit, Prof. dr. ir. H.P.J. Bruyninckx,\\dr.ir. M.J.G. van de Molengraft,  
+dr.ir. J.M. van de Mortel - Fronczak}% <-this % stops a space
+%\thanks{*This work was not supported by any organization}% <-this % stops a space
+\thanks{$^{1}$A.A. Author and B.B. Author are with the Department of Mechanical Engineering, Eindhoven University of Technology, 5612 AZ Eindhoven, The Netherlands
+        {\tt\small jorritsmit@gmail.com}}%
+%\thanks{$^{2}$Bernard D. Researcheris with the Department of Electrical Engineering, Wright State University,
+%        Dayton, OH 45435, USA
+%        {\tt\small b.d.researcher@ieee.org}}%
+
+
+
+\begin{document}
+
+\graphicspath{{./images/}}
+
+\maketitle
+%\thispagestyle{empty}
+%\pagestyle{empty}
+\thispagestyle{plain}
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+As shown in literature, supervisory control synthesis could provide numerous benefits in system design, e.g.\@ reducing time-to-market, and task execution, e.g.\@ ensuring safety requirements are met. 
+However, supervisory control synthesis is usually not used in a dynamic environment such as autonomous robotics. 
+The purpose of this paper, therefore, is to explore the limitations, benefits and application scope of supervisory control synthesis in autonomous robotics.
+Using two case studies presented in this paper, we show that supervisory control synthesis and model based engineering provides us with a new methodology for designing and programming autonomous robots. 
+This methodology reduces development time and manually made coding errors, through the use of modular en re-usable models of the robot and requirements, specifying its required behaviour.
+Supervisory control synthesis is suited for high-level decision making and task- and safety requirements specification, but less suited for low level control of the robot.
+Therefore, the case studies also explore the application scope of supervisory control synthesis for autonomous robots.
+The application scope is defined as the range of abstraction levels supervisory control synthesis can be applied to in autonomous robots.\\
+% Possible research and methods that can eliminate limitations to the application of supervisory control synthesis for autonomous robots are also presented.
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{introduction}
+\input{supervisory_control}
+\input{case_study}
+\input{method}%design choices
+\input{results}
+\input{concluding_remarks}
+\section*{ACKNOWLEDGEMENT} The authors would like to thank Albert Hofkamp, as he has been an enormous help in understanding the CIF tool set and providing a way to convert a CIF specification into a working supervisor implementation in \texttt{C}.\\
+\printbibliography{} 
+\newpage
+\appendices
+\input{model_and_requirements}
+\newpage
+\input{code}
+\end{document}

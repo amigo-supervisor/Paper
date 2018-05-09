@@ -1,0 +1,41 @@
+\begin{figure}[!ht]
+\centering
+% ->,>=stealth',
+	\begin{tikzpicture}[node distance=2cm, auto,
+                      semithick, text width=1.7cm, font=\footnotesize]
+    % \node [circle, fill=black] (1){};
+    % \node (2)[above of=1]{};
+    % \node (3)[below of=1]{};
+
+    \node[statesquaresup, align=left] (supervisor) {\textbf{Supervisor} \\
+                                CIF 3};
+    \node[statesquareimpl,left=0.4cm of supervisor, align=left] (smach) {\textbf{Wrapper} \\
+                                              Communcation layer between the supervisor and existing system architecture};
+    \node[statesquareimpl,above left=0.3cm and 0.3cm of smach, align=left] (skills) {\textbf{Robot skills} \\
+                                               Robot abstraction layer of Amigo};
+    \node[statesquareimpl,below left =0.3cm and 0.3cm of smach, align=left] (states) {\textbf{Robot states} \\
+                                               SMACH skill specification of Amigo};
+    \node[statesquarereq, align=left, above right=0.75cm and 0.5cm of supervisor] (req-safe) {\textbf{Requirements} \\
+                                A CIF model of the safety requirements for Amigo};
+    \node[statesquarereq, align=left, right=0.5cm of supervisor] (req-skill) {\textbf{Requirements} \\
+                                A CIF model of the skill-specific requirements for Amigo};
+    \node[statesquarereq, align=left, below right=0.75cm and 0.5cm of supervisor] (req-task) {\textbf{Requirements} \\
+                                A CIF model of the task-specific requirements for Amigo};
+
+    \draw [dashed] (-3.2,-9) -- (-3.2,9);
+
+    % \draw [line, dashed] (2) -- (3);
+    % \draw [line, ->] (1)  -- (smach);
+    % \draw [line, ->] (1)  -- (supervisor);
+    \draw [line, <->] (smach)  -- (supervisor);
+
+    \draw [line] (skills)  -| (smach);
+    \draw [line] (skills)  -- (states);
+    \draw [line] (states)  -| (smach);
+    \draw [line] (req-safe)  -| (supervisor);
+    \draw [line] (req-skill)  -- (supervisor);
+    \draw [line] (req-task)  -| (supervisor);
+
+	\end{tikzpicture}
+  \caption{System architecture}\label{fig:system_architecture}
+\end{figure}

@@ -1,0 +1,109 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{wonhamautomata}[2008/13/05]
+
+\RequirePackage{tikz}
+\RequirePackage{relsize}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{automata}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+
+%\usetikzlibrary{backgrounds}
+%\usepackage{pgfbaselayers}
+
+%\tikzstyle{state without output}=  [circle,draw,minimum size=2.5em,every state]
+
+%\newcommand{\centertikz}[1]{\hbox to\hsize{\hss#1\hss}}
+\newcommand{\centertikz}{\makebox[\hsize][c]}
+
+\newcommand{\event}[1]{\textit{#1}}
+\newcommand{\state}[1]{\textbf{#1}}
+
+%\newcommand{\cblock}[1]{\tabular{@{}c@{}}#1\endtabular}
+\newcommand{\twol}[2]{\tabular{@{}c@{}}#1\\[-1ex]\tiny#2\endtabular}
+
+% Align multiple labels on one transition
+\newcommand{\cblock}[1]{\renewcommand{\arraystretch}{0.8}\tabular{@{}c@{}}#1\endtabular}
+\newcommand{\lblock}[1]{\renewcommand{\arraystretch}{0.8}\tabular{@{}l@{}}#1\endtabular}
+\newcommand{\rblock}[1]{\renewcommand{\arraystretch}{0.8}\tabular{@{}r@{}}#1\endtabular}
+
+% Bend definitions
+\tikzset{
+  bend0/.style={bend angle=0,bend left},
+  bend1/.style={bend angle=15,bend left},
+  bend2/.style={bend angle=30,bend left},
+  bend3/.style={bend angle=45,bend left},
+  bend4/.style={bend angle=75,bend left},
+  bend0r/.style={bend angle=0,bend right},
+  bend1r/.style={bend angle=15,bend right},
+  bend2r/.style={bend angle=30,bend right},
+  bend3r/.style={bend angle=45,bend right},
+  bend4r/.style={bend angle=75,bend right},
+}
+
+\tikzset{
+  state small without output/.style =
+    { draw, circle,
+      minimum size=0.5em,
+      inner sep=0em,
+      every state,
+    }
+, transition font/.style =
+% Possible bug with sloped and auto=left
+, transition/.style={transition font,->,bend1}
+%, transition/.style={transition font,bend1,auto=left,sloped}
+% loops
+, transition loop angle/.style={transition font,->,out=#1+30,in=#1-30,loop}
+, transition loop right/.style = {right,transition loop angle=0}
+, transition loop above right/.style = {above right,transition loop angle=45}
+, transition loop above/.style = {above,transition loop angle=90}
+, transition loop above left/.style = {above left,transition loop angle=135}
+, transition loop left/.style  = {left,transition loop angle=180}
+, transition loop below left/.style = {below left,transition loop angle=125}
+, transition loop below/.style = {below,transition loop angle=270}
+, transition loop below right/.style = {below right,transition loop angle=315}
+, automaton/.style=wonham
+, wonham/.style=
+    { node distance=10em
+    , on grid
+    , x=1em
+    , y=1em
+    , >=stealth'
+    , shorten >=1pt
+    , state/.style=state small without output
+    , every label/.style={font=\relsize{-2}\bf}
+    , marked/.style={fill=tueblue}
+    , accepting/.style = {accepting by arrow}
+    , initial text =
+    , every loop/.style={->,looseness=3,min distance=3em}
+    , transition font/.style = {font=\smaller\it}
+    , controllable/.style={}
+    , uncontrollable/.style={densely dashed}
+    , action/.style={transition,controllable}
+    , event/.style={transition,uncontrollable}
+    , action loop right/.style = {controllable,transition loop right}
+    , action loop above/.style = {controllable,transition loop above}
+    , action loop left/.style  = {controllable,transition loop left}
+    , action loop below/.style = {controllable,transition loop below}
+    , action loop above right/.style = {controllable,transition loop above right}
+    , action loop above left/.style  = {controllable,transition loop above left}
+    , action loop below left/.style  = {controllable,transition loop below left}
+    , action loop below right/.style = {controllable,transition loop below right}
+    %,
+    , event loop right/.style = {uncontrollable,transition loop right}
+    , event loop above/.style = {uncontrollable,transition loop above}
+    , event loop left/.style  = {uncontrollable,transition loop left}
+    , event loop below/.style = {uncontrollable,transition loop below}
+    , event loop above right/.style = {uncontrollable,transition loop above right}
+    , event loop above left/.style  = {uncontrollable,transition loop above left}
+    , event loop below left/.style  = {uncontrollable,transition loop below left}
+    , event loop below right/.style = {uncontrollable,transition loop below right}
+    % backward
+    , point/.style=state
+    }
+}
+
+\tikzstyle{automaton_small}=[automaton,node distance=5em]
+\tikzstyle{blind}=[gray]

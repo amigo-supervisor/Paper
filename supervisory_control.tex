@@ -1,0 +1,98 @@
+\section{SUPERVISORY CONTROL THEORY}\label{sec:supervisory_control}
+Without going into too much detail, this section explains the topics of supervisory control synthesis and discrete-event systems.
+It contains the necessary background information to understand the research described in this paper.\\
+Supervisory control theory applies to a subset of systems called Discrete Event Systems (DES).
+These systems are represented by discrete locations (states) and event-labelled transitions and can be modelled by automata.
+Additionally, in extended automata, also (discrete) variables can be used.
+An extended automaton allows to additionally augment the transitions with guards and updates.\\
+
+An automaton \(G\) is formally described as follows:
+\begin{equation}
+  G = (L,V, E, \rightarrow, L_m , l_0 , \nu_0)
+\end{equation}
+with:
+\begin{description}
+  \item[\(L\)] a finite set of locations
+  \item[\(V\)] a finite set of discrete variables
+  \item[\(E\)] a finite set of events
+  \item[\( \rightarrow\)] \(\subseteq L \times G(V) \times E \times U(V ) \times L\) the transition relation
+  \item[\( L_m\)] the set of marked locations, \(L_m \subseteq L\)
+  \item[\( l_0\)] the initial location, \(l_0 \in L\)
+  \item[\( \nu_0\)] the initial valuation of the variables, \(\nu_0:V \rightarrow \lambda\) and \(\lambda\) is the set of all values\\
+\end{description}
+
+An example automaton is graphically depicted in \cref{fig:automaton}.\\[2ex]
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4cm,
+                      semithick, every node/.style={scale=1.2}]
+    % \tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+    \node[initial,state]      (1)                     {$l_1$};
+    \node[state]              (2) [below right of=1]  {$l_2$};
+    \node[state, accepting]   (3) [right of=1]  {$l_3$};
+
+    \path (1) edge [bend left]          node [align=center] {$v_1 < 5$ \\ $e_1$} (3)
+              edge [bend right]          node [align=center, left] {$e_3$ \\ $v_1 := v_1 +1$} (2)
+          (2) edge [bend right]          node                {$e_4$} (3)
+          (3) edge [bend left]         node                {$e_2$} (1);
+  \end{tikzpicture}
+  \caption{Graphic depiction of an automaton}\label{fig:automaton}
+\end{figure}
+
+with:
+\begin{description}[\IEEEsetlabelwidth{\(e_1, e_2, e_3, e_4\)}]
+  \item[\(l_1, l_2,l_3\)] the locations
+  \item[\(v_1\)] the discrete variable
+  \item[\(e_1, e_2, e_3, e_4\)] the events
+  \item[\(l_3\)] the marked location
+  \item[\(l_1\)] the initial location
+  \item[\(v_1=0\)] the initial values of the variables
+  \item[\(v_1 := v_1+1\)] the update of \(v_1\) done by event \(e_3\)
+  \item[\(v_1 < 5\)] the guard for event \(e_1\)\\
+\end{description}
+
+A model of a DES usually consists of multiple automata, sharing variables and events, called a network of automata.\\
+
+In supervisory control theory, an uncontrolled system that is modelled by these automata is called a plant. 
+A distinction is made between controllable events, which can be controlled by the supervisor, and uncontrollable events, which cannot be controlled.
+A button that needs to be pressed by a user, for example, is an uncontrollable event.
+When combined with a set of requirements, supervisory control theory provides a way to automatically synthesize a supervisor.
+These requirements can, for example, be a set of safety requirements or process requirements.
+Safety requirements prevent dangerous situations from occurring, e.g.\@ the robot colliding with its environment or itself.
+Process requirements ensure a certain order of events, e.g.\@ not releasing an object before reaching the table on which the object is supposed to be placed.
+The requirements can be modelled in the same way as the plant, with an automaton, and can refer to the plant variables and locations.
+It can also be modelled as a state-based expression, a requirement specified in terms of conditions of a state.
+Where a guard in an automaton based requirement would block an event from happening based on a condition of a variable, a state based expression prescribes in what state the system cannot be in, or what value a variable cannot have.
+While the same result can be obtained with an automaton based requirement, a state-based expression can offer a more intuitive way to describe requirements.  
+The synthesized supervisor then disables events that would lead to a violation of these requirements.\\
+
+There are a few important benefits, applicable to this research, that follow from the following.\\
+
+\begin{LaTeXdescription}
+\item[Separation] The requirements and plant can be described separately. This separation means adjustments to requirements or plant only have to be applied locally. Synthesis will take care of the knock-on effects of these changes. In conventional programming changing a simple requirement would not only involve tedious work in many different places in the code, the software developer also has to think of all the implications of the change himself and apply them correctly. This separation will make developing easier and faster.\\
+\item[Modular design] The method proposed in \cref{sec:method} uses separate modules for groups of requirements, e.g.\@ skill requirements and task requirements. An example of a skill requirement used in this paper, is the grab skill, described in \cref{sec:method}. Only when needed in a certain task this skill can be included, thus creating a modular system.\\
+\item[Re-usability] The models of the requirements and the robot can be applied to new tasks, or even new robots, without many adjustments. Because the robot model contains general components used in robots, e.g.\@ arms, the robot model can mostly stay the same when using a different robot. Only the intermittent communication layer between the supervisor and the robot, is robot specific.\\
+
+\end{LaTeXdescription}
+
+As mentioned before, supervisory control theory does not only provide benefits related to system design (\cref{sec:introduction}), but also related to task execution.
+The synthesized supervisor has two useful properties related to task execution: non-blockingness and the guarantee that all events that would lead to a violation of the requirements are blocked.
+A non-blocking supervisor blocks the execution of every event that would lead to a system state from which no marked state \(L_m\) can be reached.
+
+These properties are useful, because without the use of supervisory control synthesis, the software developer would have to create these properties with logic in the code.
+Removing the ownership of this issue to the supervisor can prevent unwanted behaviour when changes have to be made to related parts of the system.
+The developer could forget to change the logic in all the related parts and the system can reach a blocking state or violate the requirements.\\
+
+Supervisory control synthesis also guarantees a maximally permissive and controllable supervisor.
+Maximal permissiveness assures that only those events that could lead to a violation of the requirements or the non-blockingness principle, are blocked by the supervisor.
+Controllability refers to the fact that the supervisor only blocks controllable events.\\ 
+
+
+When synthesizing one supervisor for large systems with many components, an effect occurs called state-space explosion. 
+This kind of supervisor is called a monolithic supervisor and since it has to account for all possible state combinations of the components and block according to all the requirements, it becomes very large and takes a long time to synthesize.
+There are different synthesis techniques that can circumvent this problem, i.e.\@ modular~\cite{modular} or hierarchical~\cite{hierachical} synthesis and although they were not necessary for the case studies in this research, they could prove useful when increasing the scope and complexity of the supervisor.\\
+
+\todo[disable]{talk about no existence of non-blockingness in dynamic environment}
+

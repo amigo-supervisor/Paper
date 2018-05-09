@@ -1,0 +1,71 @@
+\section{CASE STUDIES}\label{sec:case_studies}
+\Cref{sec:introduction} states the main contribution and purpose of this paper:
+to investigate the limitations, benefits and application scope of supervisory control synthesis for autonomous robots.
+To this end, two case studies were designed to showcase what supervisory control can contribute in the field of autonomous robotics.\\
+
+As discussed in \cref{sec:introduction}, the benefits of supervisory control synthesis can be classified into two main categories: system design and task execution. 
+Further on in \cref{sec:supervisory_control}, these categories were expanded on.
+For systems design, aspects related to separation, modularity and re-usability were discussed.
+The properties of the synthesized supervisor, non-blockingness and no violation of the requirements, are benefits in the task execution category.
+The case studies presented here show the extent to which these benefits and principles can be applied to autonomous robots, using the method described in \cref{sec:method}.\\
+
+The robot used for the case studies, is the Amigo robot, see~\cite{amigo_rop,amigo_ros,amigo_paper}. 
+This is an autonomous service robot developed and maintained at the Eindhoven University of Technology in the Control Systems Technology Group. It competes in the RoboCup@Home league and has a functional system architecture and code, which can be found in the \texttt{tue\_robotics} repository~\cite{amigo_github}. 
+This robot was chosen for the case studies, because the low-level control design was already in place and from there, it was possible to use supervisory control synthesis to control the robot with high-level commands. 
+Also, the robot is controlled at task and skill level by a finite-state machine implementation in ROS using the SMACH library~\cite{smach}, which was thought to make interaction with the synthesized supervisor more straightforward.
+The robot model, its requirements and the synthesized supervisor are created with the CIF 3 tool set~\cite{cif3}. CIF 3 is also developed and maintained at the Control Systems Technology Group.
+CIF 3 can generate a C library~\cite{cif3_manual} implementation of the supervisor and this is leveraged to fuse the existing SMACH finite-state machines with the supervisor.
+When the robot is being used without supervisor, a task is described by a SMACH finite state-machine.
+In the case studies presented here, this task finite state-machine is replaced by a communication layer between the supervisor and the robot system architecture, called a wrapper. 
+\Cref{fig:system_architecture} depicts the system architecture used for the case studies. \Cref{sec:method} provides a more detailed description of this architecture.\\
+
+\input{images/tikz/system_architecture}
+
+\subsection{CASE STUDY I:\@ PICK AND PLACE}\label{sec:cs1}
+In this case study, Amigo navigates to a table with an object on it. 
+It then grabs the object, navigates to a different table and puts the object down.
+\Cref{fig:decision_flowchart_CSI} provides a, somewhat simplified, flowchart representation of the case study.
+The supervisor here dictates when it is safe to execute the actions, move the arm, grab and navigate.\\
+
+The system design benefits supervisory control synthesis provides in this case study, can be found in the way the code is structured. 
+As can be seen in \cref{fig:system_architecture}, a clear distinction is made between safety, skill and task requirements. 
+Apart from the model of the robot, there are 3 separate models of requirements, each with their own purpose:\\
+
+\begin{LaTeXdescription}
+  \item [Safety requirements] This set of requirements is always necessary for the robot to function correctly and needs to be included in the supervisory control synthesis for every task; e.g.\@ collision prevention. See \cref{fig:automaton_safe_arm_l} in Appendix~\ref{sec:model_req} and \cref{code:safeArmCIF} in Appendix~\ref{sec:code}. 
+  \item [Skill requirements] This set of requirements is specific to a certain skill of the robot and needs to be included in the supervisor control synthesis of a task that uses this skill; e.g.\@ the grab skill. See \cref{code:grab_skill} in Appendix~\ref{sec:code}.
+  \item [Task requirements] This set of requirements is specific to a certain task and defines the (order of) skills that need to be executed during a task. It needs to be designed for every task and placed on top of the safety and skill requirements; e.g.\@ the pick-up task. See \cref{fig:pick_task} in Appendix~\ref{sec:model_req} and \cref{code:pick_task} in Appendix~\ref{sec:code}.\\%,code:cs1-task-req
+\end{LaTeXdescription}
+
+% As mentioned before, besides task requirements, the system architecture proposed by this paper contains two more categories of requirements, skill and safety requirements.
+% An example of a skill requirement used in this case study, is the grab skill, shown in \cref{code:grab_skill,fig:grab_skill}.
+% An example of a safety requirement used in this case study, is collision avoidance, shown in \cref{fig:automaton_safe_arm_l}.\\
+
+This separation makes the system very robust to changes. 
+When, in the future, a new safety requirement needs to be implemented, the model of safety requirements is the only thing that needs to be changed. 
+The newly synthesized supervisor will handle the rest, where without the use of supervisory control synthesis changes need to be made throughout the code.\\
+
+One of the task execution benefits supervisory control synthesis provides in this case study, is that the individual skills are executed concurrently where possible.
+% The code in SMACH is limited to just listing the needed skills in a concurrence state machines, these are a type of SMACH state machines that execute the states inside asynchronously~\cite{jorrit_github}.
+As mentioned in \cref{sec:supervisory_control}, supervisory control synthesis can remove ownership of certain problems from the software developer to the synthesized supervisor.
+In this case study, this means that the software developer only has to define the order of the skills needed for the case study in a CIF task requirement automaton.%, shown in \cref{fig:pick_task} in \cref{sec:model_req}
+This requirement automaton describes the case study skill order as shown in \cref{fig:decision_flowchart_CSI}.
+The supervisor then decides, based on these task requirements, the skill order.
+It handles all skill scheduling and allows skills to execute concurrently where the requirements allow it.\\
+
+Furthermore, this case study shows how the supervisor can handle unexpected situations. When a collision is found on the path, the arm stops moving and re-plans the path to the object. In \cref{sec:method}, a more in-depth explanation is given of the way the supervisor handles this.\\
+
+\input{images/tikz/casestudy1}
+
+\subsection{CASE STUDY II:\@ DYNAMIC GRAB}\label{sec:cs2}
+% The fact that the models of requirements can be applied to different tasks proves the \textit{modularity} and \textit{re-usability} of the supervisor control system.
+This second case study is designed to show the \textit{modularity} and \textit{re-usability} of the models used for supervisory control synthesis.
+Applying most of the same models, a new task with the same properties (i.e.\@ no collision) is designed with minimal effort.\\
+
+In this case study, the robot starts in front of a table with two objects placed on it. The robot then picks up both objects.
+In SMACH it is only specified that the robot has to pick up both objects, the grab-skill-requirement guarantees that a supervisor is synthesized that decides what arm is used to grab which object.
+\cref{fig:decision_flowchart_CSII} shows the flowchart of the case study.\\
+
+The safety requirements still apply, so collisions are still avoided (\cref{fig:automaton_safe_arm_l}), but the task requirements of \cref{sec:cs1} are removed. 
+
+\input{images/tikz/casestudy2}

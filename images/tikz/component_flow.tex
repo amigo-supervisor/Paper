@@ -1,0 +1,137 @@
+\begin{figure}[!ht]
+  \begin{center}
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+                      semithick, font=\footnotesize]
+    % \tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+    \node[state,accepting]              (1)                     {$idling$};
+    \node[state, accepting]             (2) [align=center,left of=1]         {$planning$};
+    \node[state, accepting]             (3) [align=center,right of=1]        {$planning$\\ $to\ grab$};
+    \node[state, accepting]             (4) [align=center,below of=2]        {$moving$};
+    \node[state,accepting]              (5) [align=center, below of=3]  {$grabbing$};
+    \node[state,accepting]              (6) [align=center, below=3.5cm of 1]  {$re$-\\$planning$} ;
+
+    \draw[<-] (1) -- node {} ++(0,2cm);
+
+
+    \path (1) edge []          node [align=center, above]       {$plan$} (2)
+              edge [bend left]          node [align=center, above]      {$plan\ to\ grab$}   (3)
+          (2) edge [bend right]          node [align=center, left]             {$move$}   (4)
+              edge [bend left]          node [align=center, above]    {$idle$}   (1)
+          (3) edge [bend left]          node [align=center]             {$grab$}   (5)
+              edge []          node [align=center, above]             {$idle$}   (1)
+          (4) edge [bend left]          node [align=center, left]       {$replan$}   (6)
+              edge []                   node [align=center, below, pos=0.25]      {$plan$\\$to\ grab$}   (3)
+              edge []          node [align=center, left,pos=0.4]      {$gr\ \|\ !ma$\\$idle$}   (1)
+          (5) edge []                   node [align=center, below, pos=0.25]       {$plan$}   (2)
+              edge [bend left]          node [align=center, below]      {$replan$}   (6)
+              edge []          node [align=center, right,pos=0.4]      {$oa\ \|\ !ma$\\$idle$}   (1)
+          (6) edge [bend left]          node [align=left, right]             {$grab$}   (5)
+              edge []          node [align=center, left, pos=0.9]             {$idle$}   (1)
+              edge [bend left]          node [align=center]             {$move$}   (4);
+  \end{tikzpicture}
+  \caption{Automaton of left arm}
+  \label{fig:automaton_arm_l}
+  \end{center}
+with:
+\begin{description}
+  \item[\(gr\)] goal reached
+  \item[\(ma\)] moving arm
+  \item[\(oa\)] object in arm\\
+\end{description}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=6cm,
+                      semithick, font=\footnotesize]
+    % \tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+    \node[state,accepting]      (1)                     {};
+
+
+    \path (1) edge [loop above]          node [align=center]       {$pv=1\ \&\&\ !cp$ \\ $arm.move$} ()
+              edge [loop left]          node [align=center]       {$pv\ !=1\ \|\ cp$ \\ $arm.replan$} ()
+              edge [loop right]          node [align=center]       {$pv=2\ \|\ gr\ \|\ !am$ \\ $arm.idle$} ()
+              edge [loop below]          node [align=center]       {$pv=1\ \&\&\ !cp$ \\ $arm.grab$} ();
+  \end{tikzpicture}
+  \caption{Automaton of safety requirement left arm}
+
+  \label{fig:automaton_safe_arm_l}
+\end{center}
+with:
+\begin{description}
+  \item[\(pv\)] plan viable
+  \item[\(cp\)] collision on path
+  \item[\(gr\)] goal reached
+  \item[\(!am\)] arm.moving-arm = false, while arm is in location moving\\
+\end{description}
+\end{figure}
+
+% controllable goto_phase2;
+
+% requirement task:
+%    controllable waiting;
+% //     disc list string nav_waypoints = [""];
+% //     disc list string objects_to_grab = [""];
+%     input bool object_grabbed;
+%     disc bool navigating = false;
+%     disc bool grabbing = false;
+
+%     location phase1:
+%     initial;
+%     marked;
+% //      edge grab_skill.write when start = true do start := false;
+%     edge navigation_skill.move_to when navigating = false do navigating := true;
+%     edge grab_skill.grab when grabbing = false do grabbing := true;
+%     edge waiting when navigating = true and grabbing = true goto wait;
+
+%     location wait:
+%     marked;
+%     edge goto_phase2 when object_grabbed = true goto phase2;
+
+%     location phase2:
+%     marked;
+% //      grab_skill.place_point := "table2"
+%     edge navigation_skill.move_to;// do navigate.waypoint := "table2";
+% //      edge grab_skill.release;// when; \\There is a table?
+
+
+ % location phase2:
+ %    marked;
+ %    edge navigation_skill.move_to when navigating = false do navigating := true;
+ %    edge place_skill.release when grabbing = false do grabbing := true;
+% end
+
+\begin{figure}[!ht]
+  \begin{center}
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+                      semithick, font=\footnotesize]
+    % \tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+    \node[state, accepting]             (1)                                  {$phase1$};
+    \node[state, accepting]             (2) [align=center,below of=1]         {$wait$};
+    \node[state, accepting]             (3) [align=center,below of=2]        {$phase2$};
+
+
+    \draw[<-] (1) -- node {} ++(0,2cm);
+
+
+    \path (1) edge [loop right]         node [align=center, right]       {$!nv$ \\ $navigation\_skill.move\_to$ \\ $nv := true$} ()
+              edge [loop left]          node [align=center, left]      {$!gr$ \\ $grab\_skill.grab$ \\ $gr := true$}   ()
+              edge []                   node [align=center]      {$nv\ \&\&\ gr$ \\ $waiting$} (2)
+          (2) edge []                   node [align=center]            {$og$ \\ $goto\_phase$2 \\ $nv := false\ \&\&\ gr := false$} (3)
+          (3) edge [loop right]         node [align=center, right]       {$!nv$ \\ $navigation\_skill.move\_to$ \\ $nv := true$} ()
+              edge [loop left]          node [align=center, left]      {$!gr$ \\ $place\_skill.release$ \\ $gr := true$}   ();
+
+  \end{tikzpicture}
+  \caption{Automaton of pick-up task}
+  \label{fig:pick_task}
+  \end{center}
+with:
+\begin{description}
+  \item[\(nv\)] navigating
+  \item[\(gr\)] grabbing
+  \item[\(og\)] object grabbed\\
+\end{description}
+\end{figure}

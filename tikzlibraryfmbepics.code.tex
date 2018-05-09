@@ -1,0 +1,87 @@
+
+\RequirePackage{relsize}
+
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.document}
+\usetikzlibrary{shapes.misc}
+
+\definecolor{evalcolor}{rgb}{0.000,0.400,0.800}
+
+% In beamer default to background color, otherwise use white
+\providecolor{bg}{named}{white}
+
+\tikzset{
+fmbe/.style= { 
+  , x = 1em
+  , y = 1em
+  , node distance = 6.5em
+  , shorten >=1pt
+  , >=stealth
+  , every artifact/.style = { draw
+                            , minimum size=2.5em
+                            , font=\larger
+                            }
+  , document/.style={ every artifact
+                    , shape=document % Warning shape and style overload
+                    }
+  , model/.style={ every artifact
+                 , circle
+                 , inner sep=0pt
+                 %, rounded rectangle
+                 }
+  , realization/.style={ every artifact
+                       , rectangle
+                       }
+  , infra/.style = { draw
+                   , double arrow
+                   , double arrow head extend=1ex
+                   %, font=\relsize{-1}
+                   %, inner sep=.25ex
+                   %, after node path = {
+                   %    (\tikzlastnode.south east) edge (\tikzlastnode.south west)
+                   %    (\tikzlastnode.north east) edge (\tikzlastnode.north west)
+                   %  }
+                   }
+  , actlb/.style = { above
+                   , inner sep=0pt
+                   , sharp corners
+                   , font=\strut
+                   }
+  , actlb'/.style = { actlb
+                    , anchor=mid
+                    , fill=bg
+                    , font=
+                    , inner sep=2pt
+                    }
+  , act/.style = { ->
+                 , rounded corners
+                 , every node/.style = actlb
+                 }
+  %, evalnode/.style = { draw
+  %                    , rectangle
+  %                    , rounded corners
+  %                    , evalcolor
+  %                    }
+  %, evalconn/.style = { act
+  %                    , evalcolor
+  %                    , font=\strut
+  %                    , inner sep=0pt
+  %                    }
+  , eval/.style = { %every node/.style= evalnode
+                  %, act
+                  , ->
+                  , rounded corners
+                  , every node/.style = actlb
+                  , dashed
+                  , draw
+                  , evalcolor
+                  , font=\strut
+                  , inner sep=0pt
+                  }
+  , hidden/.style = { %semitransparent
+                    , opacity=.5
+                    , every node/.append style={fill opacity=1,text opacity=.5}
+                    }
+  }
+}
+

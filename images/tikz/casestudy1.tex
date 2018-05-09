@@ -1,0 +1,88 @@
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[node distance = 3.5cm, auto, every node/.style={scale=0.8}]
+    % Place nodes
+    \node [block] (init) {Go to start position and wait};
+    \node [cloud, left of=init] (user) {User};
+
+    \node [circle, below of=init, fill=black, yshift=2cm] (comb1) {};
+    \node [decision, below left of=comb1] (eval_nav1) {Supervisor can we navigate?};
+    \node [decision, below of=comb1] (eval_manup1) {Supervisor can we move the arm?};
+    \node [decision, below right of=comb1] (eval_grab1) {Supervisor can we grab?};
+
+    \node [block, below of=eval_nav1] (navigate_to1) {Navigate to table 1};
+    \node [block, below of=eval_manup1, yshift=1cm] (manup_to1) {Move arm to object};
+    \node [block, below of=eval_grab1] (grab_to1) {Grab object};
+    \node [circle, below of=manup_to1, fill=black, yshift=2.2cm] (comb2) {};
+
+    \node [decision, below of=comb2, yshift=0.6cm] (succes1) {Is the object picked up?};
+    \node [circle, below of=succes1, fill=black, yshift=1.8cm] (comb3) {};
+
+    \node [decision, below left of=comb3] (eval_nav2) {Supervisor can we navigate?};
+    \node [decision, below of=comb3] (eval_manup2) {Supervisor can we move the arm?};
+    \node [decision, below right of=comb3] (eval_grab2) {Supervisor can we release?};
+
+    \node [block, below of=eval_nav2] (navigate_to2) {Navigate to table 2};
+    \node [block, below of=eval_manup2, yshift=1cm] (manup_to2) {Move arm to place point};
+    \node [block, below of=eval_grab2] (grab_to2) {Release object};
+
+    \node [circle, below of=manup_to2, fill=black, yshift=2.2cm] (comb4) {};
+
+    \node [decision, below of= comb4, node distance=3cm] (succes2) {Is the object placed?};
+
+    \node [block, below of=succes2, node distance=2.6cm] (stop) {stop};
+
+    % Draw edges
+    \path [line, dashed] (user) -- (init);
+    \path [line] (init) -- (comb1);
+
+    \path [line, anchor=south] (comb1)  -| (eval_nav1);
+    \path [line, anchor=south] (comb1) -| (eval_manup1);
+    \path [line, anchor=south] (comb1) -| (eval_grab1);
+
+    \path [line, anchor=south] (eval_nav1)  -- node[decision answer] {yes} (navigate_to1);
+    \path [line, anchor=south] (eval_manup1) -- node[decision answer] {yes} (manup_to1);
+    \path [line, anchor=south] (eval_grab1) -- node[decision answer] {yes} (grab_to1);
+
+    % \path [line, anchor=west, loop left] (eval_nav1) node[decision answer] {no} (eval_nav1);
+    % \path [line, anchor=north, loop above] (eval_manup1) node[decision answer] {no} (eval_manup1);
+    % \path [line, anchor=east, loop right] (eval_grab1) node[decision answer] {no} (eval_grab1);
+    \path[->] (eval_nav1) edge [loop left, looseness=4] node {no} (eval_nav1);
+    \path[->] (eval_manup1) edge [loop above, looseness=4] node {no} (eval_manup1);
+    \path[->] (eval_grab1) edge [loop right, looseness=4] node {no} (eval_grab1);
+    % \draw (eval_manup1) to [out=100,in=80,looseness=7] (eval_manup1);
+
+
+    \path [line] (navigate_to1) |- (comb2);
+    \path [line] (manup_to1) |- (comb2);
+    \path [line] (grab_to1) |- (comb2);
+
+    \path [line] (comb2) -- (succes1);
+
+    \path[->] (succes1) edge [loop right, looseness=4] node {no} (succes1);
+    \path [line, anchor=south] (succes1)  -- node[decision answer] {yes} (comb3);
+
+    \path [line, anchor=south] (comb3) -| (eval_nav2);
+    \path [line, anchor=south] (comb3) -| (eval_manup2);
+    \path [line, anchor=south] (comb3) -| (eval_grab2);
+
+    \path [line, anchor=south] (eval_nav2)  -- node[decision answer] {yes} (navigate_to2);
+    \path [line, anchor=south] (eval_manup2) -- node[decision answer] {yes} (manup_to2);
+    \path [line, anchor=south] (eval_grab2) -- node[decision answer] {yes} (grab_to2);
+
+    \path[->] (eval_nav2) edge [loop left, looseness=4] node {no} (eval_nav2);
+    \path[->] (eval_manup2) edge [loop above, looseness=4] node {no} (eval_manup2);
+    \path[->] (eval_grab2) edge [loop right, looseness=4] node {no} (eval_grab2);
+
+    \path [line] (navigate_to2) |- (comb4);
+    \path [line] (manup_to2) |- (comb4);
+    \path [line] (grab_to2) |- (comb4);
+
+    \path [line] (comb4) -- (succes2);
+    
+    \path[->] (succes2) edge [loop right, looseness=4] node {no} (succes2);
+    \path [line, anchor=south] (succes2)  -- node[decision answer] {yes} (stop);
+
+  \end{tikzpicture}
+  \caption{Decision flowchart of Case Study I}\label{fig:decision_flowchart_CSI}
+\end{figure}
